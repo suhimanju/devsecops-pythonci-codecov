@@ -14,9 +14,13 @@ jobs:
     - run:
         name: Run Tests
         command: |
-          coverage run -m pytest && \
-          coverage report && \
-          coverage htmlcov  # open htmlcov/index.html in a browser
+          coverage run -m pytest       
+    - run:
+        name: Coverage Reports
+        when: on_fail
+        command: |
+          coverage report
+          coverage htmlcov
     - store_artifacts:
         path: htmlcov
 workflows:
