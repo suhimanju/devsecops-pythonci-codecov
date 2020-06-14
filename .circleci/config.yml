@@ -13,7 +13,7 @@ jobs:
     - run:
         name: Run Tests
         command: |
-          coverage run -m pytest
+          /home/circleci/.local/bin/coverage run -m pytest
           coverage report
           coverage html  # open htmlcov/index.html in a browser
     - store_artifacts:
