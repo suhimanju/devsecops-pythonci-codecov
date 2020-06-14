@@ -8,12 +8,13 @@ jobs:
     - run:
         name: Setup testing environment
         command: |
-          pip install '.[test]' --user
+          pip3 install '.[test]' --user
+          pip3 install coverage
           echo $HOME
     - run:
         name: Run Tests
         command: |
-          /home/circleci/.local/bin/coverage run -m pytest
+          coverage run -m pytest
           coverage report
           coverage html  # open htmlcov/index.html in a browser
     - store_artifacts:
