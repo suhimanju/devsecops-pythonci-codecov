@@ -9,7 +9,7 @@ jobs:
         name: Setup testing environment
         command: |
           pip3 install '.[test]' --user
-          pip3 install coverage
+          pip3 install coverage pytest
           echo $HOME
     - run:
         name: Run Tests
