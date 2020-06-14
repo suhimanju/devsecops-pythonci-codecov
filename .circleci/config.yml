@@ -23,11 +23,11 @@ jobs:
           command: |
             coverage report
             coverage html
+      - codecov/upload:
+          file: htmlcov/codecov.html
+          flags: pytest-coverage
       - store_artifacts:
           path: htmlcov
-      - codecov/upload:
-          file: htmlcov/index.html
-          flags: pytest-coverage
 workflows:
   version: 2
   workflow:
