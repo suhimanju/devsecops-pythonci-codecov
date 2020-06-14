@@ -23,4 +23,3 @@ workflows:
   workflow:
     jobs:
     - build
-
